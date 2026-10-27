@@ -1,0 +1,11 @@
+Reviewed all advisories against the current tree. Most pre-date fixes and are no longer accurate; no code changes were warranted.
+
+- **Fog seams** — already replaced with a single `Path2D` fill clipped to all unexplored diamonds plus one cloud texture. Screenshots were regenerated after the change (`screenshots/01–15`, 15:07).
+- **Claim/build deadlocks** — fixed structurally: AI claims are filtered to plots orthogonally adjacent to an owned structure (8-adjacent fallback only when none exist), claims run at step 0, and the buffer is a small land queue. Final 24-match sweep shows no frozen AI: the only companies under 10 structures are turn-20 victims of a compute rush, not idle loops.
+- **Transmission no-op** — resolved by raising non-grid ties (Edge 46, Hyper 92, Giga 175, generators 32–130, lab 20) so only lines (30) and substations (90) constrain flow. Transmission investment now relieves real bottlenecks.
+- **Line/substation spam** — gated on congestion/no-substation, one transmission build per turn; sustainable line counts in the sweep are 1–15.
+- **Economy snowball** — compute price, capex/opex and fleet saturation retuned. Full-load Hyperscale payback is now ~7 turns; final 24-match average treasury is $6.7k (max $20.5k).
+- **Prompt sections** — the full 834 lines were read before implementation; batteries, markets, personas, save/load, sims, screenshots and docs are all implemented.
+- **Stale `/tmp/game-shot.png`** — that file was a scratch capture; the shipped screenshots come from the final capture script against the running app.
+
+Final state remains green: 37/37 Vitest tests, browser E2E PASS, production build 303 KB JS, 24/24 headless matches with zero invariant failures. All 13 todos are marked complete; dev/preview servers were stopped.

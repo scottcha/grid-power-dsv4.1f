@@ -1,0 +1,8 @@
+overlay=/home/scott/src/gridpower-experiments/overlay-dsv41f-high.yml
+label=dsv41f-high
+note=bg_32 duplicate (started 20:29:34Z) killed 20:31:02Z, exit 143; its 5 usage rows 20:29:34-20:29:42 excluded
+metrics_window_start=2026-10-26 20:29:42.902307 (surviving run 2907221/2907222, lstart 20:29:42Z; first usage row)
+note2=survivor's own meta lines will be appended by run_experiment.sh on completion (wall/ended_utc/exit_code)
+NOTE: the harness writes meta.txt on completion and will overwrite it; seam/notes live here.
+ended_utc≈2026-10-26T21:16:2xZ (harness log lost to RC-unbound bug; process observed dead by 21:16:30Z)
+exit_code=unknown (RC unbound variable bug in run_experiment.sh, fixed after the fact)
